@@ -1,0 +1,4 @@
+networkx
+python-sat
+PyQt5
+pytest

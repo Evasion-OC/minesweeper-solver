@@ -1,0 +1,107 @@
+{
+ "board": "8x8/10",
+ "level": "beginner",
+ "games": 2000,
+ "seed": 91,
+ "players": {
+  "SAT core": "scripts/baseline_sat_core.py; guesses the lowest-index covered cell",
+  "full solver": "minesweeper.pipeline.PlaySolver; guesses the covered cell least likely to be a mine",
+  "full solver, lowest-index guess": "the full solver's deduction with the SAT core's guess"
+ },
+ "win rate": {
+  "SAT core": 0.869,
+  "full solver": 0.891,
+  "full solver, lowest-index guess": 0.869
+ },
+ "boards won by only one of the SAT core and the full solver": {
+  "full solver": 62,
+  "SAT core": 18,
+  "McNemar exact p": 8.142666624995286e-07
+ },
+ "boards where the full solver with the lowest-index guess and the SAT core differ in result": 0,
+ "moves per game": {
+  "SAT core": 26.3515,
+  "full solver": 27.2685
+ },
+ "guesses per game": {
+  "SAT core": 0.362,
+  "full solver": 0.436
+ },
+ "time per move, ms": {
+  "SAT core": {
+   "mean": 0.885,
+   "median": 0.621,
+   "p95": 2.211
+  },
+  "full solver": {
+   "mean": 0.932,
+   "median": 0.629,
+   "p95": 2.604
+  }
+ },
+ "full solver": {
+  "moves by stage": {
+   "single clue": 48718,
+   "pattern": 3204,
+   "SAT": 1743,
+   "guess": 872
+  },
+  "positions": 54537,
+  "positions whose board has a symmetry of its own": 87,
+  "whole-board models built": 3743,
+  "region lookups within a game": {
+   "same region, same place": 25930,
+   "same picture, moved": 402,
+   "same picture, rotated or reflected": 1939,
+   "new": 58200
+  },
+  "regions solved": 58200,
+  "solved regions with a symmetry of their own": 4065,
+  "solved regions whose symmetry moves a covered cell": 1256,
+  "covered cells in solved regions": 435933,
+  "cell tests saved by region symmetry": 2110,
+  "guess calibration": {
+   "guesses": 872,
+   "mean predicted mine probability": 0.2465403218869796,
+   "share that were mines": 0.25,
+   "by predicted probability": {
+    "0.0-0.1": {
+     "guesses": 326,
+     "mean predicted mine probability": 0.059331804003406076,
+     "share that were mines": 0.049079754601226995
+    },
+    "0.1-0.2": {
+     "guesses": 171,
+     "mean predicted mine probability": 0.12934484924004874,
+     "share that were mines": 0.14035087719298245
+    },
+    "0.2-0.3": {
+     "guesses": 27,
+     "mean predicted mine probability": 0.23048234667731524,
+     "share that were mines": 0.25925925925925924
+    },
+    "0.3-0.4": {
+     "guesses": 40,
+     "mean predicted mine probability": 0.3333333333333333,
+     "share that were mines": 0.375
+    },
+    "0.4-0.5": {
+     "guesses": 2,
+     "mean predicted mine probability": 0.4,
+     "share that were mines": 0.0
+    },
+    "0.5-0.6": {
+     "guesses": 305,
+     "mean predicted mine probability": 0.5,
+     "share that were mines": 0.5081967213114754
+    },
+    "0.6-0.7": {
+     "guesses": 1,
+     "mean predicted mine probability": 0.6666666666666666,
+     "share that were mines": 1.0
+    }
+   },
+   "guesses with a region too large to count": 0
+  }
+ }
+}
